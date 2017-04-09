@@ -1,6 +1,20 @@
 {% extends "templates.html" %}
 {% block content %}
+<div class="login-wrapper">
   <h2> Welcome to the flask blog </h2>
   <h3> please login to access your blog </h3>
-  <p> Temp Log in: <a href="/main">Log in</a></p>
+  <form action="" method="post">
+    <div>
+      <label for="name">Username:</label>
+      <input type="text" id="name" name="username" value="{{request.form.username}}" />
+    </div>
+    <div>
+      <label for="pass">Password:</label>
+      <input type="text" id="pass" name="password" value="{{request.form.password}}" />
+    </div>
+    <div>
+      <button type="submit">Log in</button>
+    </div>
+  </form>
+</div>
 {% endblock %}
